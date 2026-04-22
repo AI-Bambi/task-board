@@ -32,6 +32,36 @@ git push origin main
 - `--force` プッシュ（明示的な指示がない限り）
 - `.env` や認証情報ファイルのコミット
 
+## デプロイ先
+
+- **本番 URL**: https://AI-Bambi.github.io/task-board/
+- **デプロイブランチ**: `gh-pages`（`npm run deploy` で自動生成）
+- **手動デプロイ手順**:
+  ```bash
+  npm run deploy   # ビルド → gh-pages ブランチへプッシュ
+  ```
+
+## 技術スタック
+
+| 分類 | 技術 |
+|------|------|
+| UI ライブラリ | React 18 |
+| ビルドツール | Vite 6 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | Plain CSS（CSS Modules は使用しない） |
+| 状態管理 | React `useState` / `useEffect` |
+| 永続化 | `localStorage` |
+| デプロイ | gh-pages |
+
+## コンポーネント命名規約
+
+- **ファイル名・関数名**: PascalCase（例: `TaskItem.jsx`, `function TaskItem()`）
+- **CSS クラス名**: kebab-case（例: `.task-item`, `.add-btn`）
+- **定数**: UPPER_SNAKE_CASE（例: `STORAGE_KEY`）
+- **props / state 変数**: camelCase（例: `tasks`, `onToggle`）
+- **イベントハンドラ**: `handle` プレフィックス（例: `handleKeyDown`, `handleSubmit`）
+- **コンポーネントファイルの置き場所**: `src/` 直下（ファイル数が増えたら `src/components/` に移動）
+
 ## コーディング規約
 
 - コメントは WHY が自明でない場合のみ書く（WHAT は書かない）
